@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Portfolio</title>
+
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <style>
+    th, td {
+      padding: 15px;
+      border: 1px solid white;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  </style>
+
+  <script type="text/javascript" src = "scripts/navbar.js"></script>
+  <!--  <script type="text/javascript">-->
+  <!--    let shareObject = {}-->
+  <!--    if(shareObject.length > 0){-->
+  <!--    document.getElementById('no-portfolio-message').innerHTML = "You dipshit, your portfolio is fucking empty you god damn loser."-->
+  <!--    } else {-->
+  <!--    document.getElementById('no-portfolio-message').innerText = "Bloody fucker."-->
+  <!--    }-->
+  <!--  </script>-->
+
+  <!--Stock Chart's CSS  -->
+  <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+  <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
+  <!--Stock Chart's JS imports  -->
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+  <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+  <script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+  <script src="https://code.highcharts.com/modules/full-screen.js"></script>
+  <!--Stock Chart's JS file.  -->
+  <script type="text/javascript" src = "scripts/chart.js"></script>
+
+</head>
+<body class="bg-blue-darkest flex flex-col">
+
+<div id="navbar" class="flex fixed transition-all duration-300 w-full bg-blue-light
+                        font-Dosis text-blue-default text-4xl font-medium z-50"> <!-- navbar -->
+
+  <div id="left-half-navbar" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
+    <div id="logo" style="padding-left: 8px" class=""> <!-- logo -->
+      <img src="img/Logo.png" alt="LOGO" class="h-16">
+    </div>
+
+    <div id="links" class="flex items-center m-1"> <!-- links -->
+      <a href="index.html" class="mx-3">Home</a>
+      <a href="news.html" class="mx-3">News</a>
+      <a href="stocks.html" class="mx-3">Stocks</a>
+      <a href="simulator.html" class="mx-3">Simulator</a>
+      <a href="portfolio.html" class="mx-3">Portfolio</a>
+    </div>
+  </div>
+
+  <div id="right-half-navbar" class="flex flex-row-reverse w-2/5 items-center m-1"> <!--right half -->
+    <div> <!-- login/signup buttons -->
+      <a href="#" class="mx-">Log In</a>
+      <a href="#" class="mx-3">Sign Up</a>
+    </div>
+
+    <div class="order-first"> <!-- help -->
+      <a href="help.html"><img src="img/question_mark.png" alt="logo" class="h-16"></a>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="body-div" class="flex flex-col relative" style="top:90px;">
+  <div id="explanation" class="flex flex-col bg-blue-light my-3 text-red-500">
+    <div id="heading-about-us-body" class="mx-auto">
+      <p class="text-6xl text-bluee-900 font-Montserrat font-medium">What is Your Portfolio?</p>
+    </div>
+    <div id="text-about-us-body">
+      <p class="text-2xl text-justify text-blue-default mx-3 my-1 font-Montserrat">
+        The term “portfolio” refers to any combination of financial assets such as stocks, bonds and cash. Portfolios may be held by individual investors or managed by financial professionals, hedge funds, banks and other financial institutions. It is a generally accepted principle that a portfolio is designed according to the investor's risk tolerance, time frame and investment objectives. The monetary value of each asset may influence the risk/reward ratio of the portfolio.
+      </p>
+      <ul class="text-2xl text-justify text-blue-default mx-3 my-1 font-Montserrat">
+      </ul>
+    </div>
+  </div>
+
+  <div id="portfolio-container">
+    <div id="networth-portfolio" style="font-size:72pt" class="flex mx-auto my-2">
+      <p id="networth-text-portfolio" class="text-blue-light font-Montserrat font-medium mx-auto">Networth Placeholder</p>
+    </div>
+    <div id="balance-portfolio" style="font-size:72pt" class="flex mx-auto my-2">
+      <p id="balance-text-portfolio" class="text-blue-light font-Montserrat font-medium mx-auto">Balance Placeholder</p>
+    </div>
+    <div id="empty-portfolio" class=" bg-pink-900 w-full">
+      <p id="noPortfolioMessage" class="text-blue-default text-5xl p-2 text-center" style="display: none"></p>
+    </div>
+    <div id="no-portfolio" class="bg-bluee-900 w-full" style="display: none">
+      <table class="mx-auto" style="color: white; padding: 20px; border: 10px">
+        <tr>
+          <th>Ticker</th>
+          <th>Stake (price bought at)</th>
+          <th># of Shares</th>
+          <th>Current share price</th>
+          <th>Current value of position</th>
+          <th>Sell position</th>
+        </tr>
+      </table>
+    </div>
+
+    <p class="bg-cyan-300"></p>
+
+    <div id="portfolio-items-container">
+
+    </div>
+  </div>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Portfolio's JS -->
+<script type="text/javascript" src="scripts/account_details.js"></script>
+<script type="text/javascript" src="scripts/portfolio.js"></script>
+</body>
+</html>

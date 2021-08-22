@@ -25,6 +25,12 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      green: colors.green,
+      orange: colors.orange,
+      pink: colors.pink,
+      violet: colors.violet,
+      bluee: colors.blue,
+      cyan: colors.cyan,
       blue: {
         light: "#5eabdb",
         default: "#175e87",
