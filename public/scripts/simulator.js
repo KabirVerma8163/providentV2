@@ -42,7 +42,8 @@ function stockBuy(elementId){
   moneySpentPlaceholder = moneySpent
 
   buyStonk(symbolPlaceholder, moneySpentPlaceholder)
-
+  account_detail.username = 'asdf';
+  storeLocal();
 }
 
 
@@ -50,6 +51,14 @@ function newStockDiv(stockName, noOfShares, shareValue, moneySpent){
   let parentDiv = document.getElementById('actualStonks')
 
 
+}
+
+function createListItem(text)
+{
+  var node = document.createElement('li');
+  node.appendChild(document.createTextNode(text));
+  node.appendChild(document.createTextNode('test'));
+  document.querySelector('ul').appendChild(node);
 }
 
 function calculateNetWorth()
