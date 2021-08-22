@@ -34,9 +34,9 @@ function calculateNetWorth()
     let sumStakes = 0;
     for (let i = 0; i < account_detail.stonks.stakes.length; i ++)
     {
-        sumStakes += account_detail.stonks.stakes[i];
+        sumStakes += parseInt(account_detail.stonks.stakes[i]);
     }
-    account_detail.net_worth = account_detail.money + sumStakes;
+    account_detail.net_worth = parseInt(account_detail.money) + sumStakes;
 }
 
 

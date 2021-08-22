@@ -10,6 +10,8 @@
     row.appendChild(th);
   }
 }*/
+document.getElementById("networth-text-portfolio").innerText=`Net Worth: $${account_detail.net_worth}`;
+document.getElementById("balance-text-portfolio").innerText=`Balance: $${account_detail.money}`;
 function generateRow(table, rowData)
 {
   let row = table.insertRow();
@@ -65,7 +67,7 @@ if (account_detail.stonks.tickers.length > 0) {
     for (let i = 0; i < data.length; i++)
     {
       generateRow(document.querySelector("table"), [account_detail.stonks.tickers[i],
-        account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close,  data[i][data[i].length - 1].close * account_detail.stonks.shares[i]]);
+        account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[i][data.length - 1].close,  data[i][data[i].length - 1].close * account_detail.stonks.shares[i]]);
     }
   });
 } else {
@@ -74,6 +76,7 @@ if (account_detail.stonks.tickers.length > 0) {
 }
 
 function sellStonk(ticker, amountSold){
+  amountSold = parseInt(amountSold);
   copy = account_detail.net_worth;
   account_detail.money += amountSold;
   fetch(`${base_url}${ticker}${base_url2}`)

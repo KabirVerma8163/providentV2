@@ -31,16 +31,6 @@ function newStockDiv(stockName, noOfShares, shareValue, moneySpent){
 
 }
 
-function calculateNetWorth()
-{
-  let sumStakes = 0;
-  for (let i = 0; i < account_detail.stonks.stakes.length; i ++)
-  {
-    sumStakes += account_detail.stonks.stakes[i];
-  }
-  account_detail.net_worth = account_detail.money + sumStakes;
-}
-
 function buyStonk(ticker, cost)
 {
   let price;
@@ -60,27 +50,6 @@ function buyStonk(ticker, cost)
       console.log(account_detail)
     });
 }
-
-function sellStonk(ticker, amountSold)
-{
-  copy = account_detail.net_worth;
-  account_detail.money += amountSold;
-  fetch(`${base_url}${ticker}${base_url2}`)
-    .then((response) => {
-      return response.json();
-    })
-    .then((stonks) => {
-      price = stonks[stonks.length-1].close;
-      index = account_detail.stonks.tickers.indexOf(ticker);
-      account_detail.stonks.stakes[index] -= amountSold
-      account_detail.stonks.shares[index] -= amountSold / price;
-      calculateNetWorth();
-      profit = account_detail.net_worth - copy;
-      account_detail.trades += profit;
-      storeLocal();
-    })
-}
-
 
 function refresh()
 {
