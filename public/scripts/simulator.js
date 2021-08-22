@@ -33,14 +33,6 @@ function newStockDiv(stockName, noOfShares, shareValue, moneySpent){
 
 }
 
-function createListItem(text)
-{
-  var node = document.createElement('li');
-  node.appendChild(document.createTextNode(text));
-  node.appendChild(document.createTextNode('test'));
-  document.querySelector('ul').appendChild(node);
-}
-
 function calculateNetWorth()
 {
   let sumStakes = 0;
