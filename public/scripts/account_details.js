@@ -1,4 +1,4 @@
-const fetch = require("node-fetch")
+//const fetch = require("node-fetch")
 
 const token = "Tsk_7124566e8c6147939d1708c99bd3b78a";
 const base_url = `https://sandbox.iexapis.com/stable/stock/`
@@ -42,8 +42,28 @@ function buyStonk(ticker, cost)
             account_detail.stonks.stakes.push(cost);
             account_detail.stonks.shares.push(cost/price);
             calculateNetWorth();
+            console.log(account_detail);
+            sellStonk('appl',100)
         });
 }
+
+function sellStonk(ticker, amountSold)
+{
+    account_detail.money += amountSold;
+    fetch(`${base_url}${ticker}${base_url2}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((stonks) => {
+            price = stonks[stonks.length - 1].close;
+            index = account_detail.stonks.tickers.indexOf(ticker);
+            account_detail.stonks.stakes[index] -= amountSold
+            account_detail.stonks.shares[index] -= amountSold / price;
+            calculateNetWorth();
+            console.log(account_detail);
+        })
+}
+
 
 function refresh()
 {
