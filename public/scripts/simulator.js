@@ -15,7 +15,6 @@ function stockBuy(elementId){
   let moneySpent = document.getElementById(moneySpentId).value
   let parentId = document.getElementById(elementId).parentNode.id
   let siblingId = document.getElementById(parentId).parentNode.firstElementChild.id
-  alert(`symbol ${symbolPlaceholder} money ${moneySpent}`);
   moneySpentPlaceholder = moneySpent;
   console.log('bought stonk');
   buyStonk(symbolPlaceholder, moneySpentPlaceholder);

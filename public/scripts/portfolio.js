@@ -44,7 +44,7 @@ function onClickFunction(ticker, inputBoxId){
   if (amountSold <= account_detail.stonks.stakes[index]){
     sellStonk(ticker, amountSold);
   } else {
-    alert("You are selling more than you have!!!!")
+    alert("You are trying to sell more than you have.")
   }
 }
 
