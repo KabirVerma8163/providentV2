@@ -35,6 +35,29 @@ for (let i = 0; i < shares.length; i++)
       });
 }
 
+(ticker) => {
+
+}
+
+function sellStonk(ticker, amountSold){
+  copy = account_detail.net_worth;
+  account_detail.money += amountSold;
+  fetch(`${base_url}${ticker}${base_url2}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((stonks) => {
+      price = stonks[stonks.length-1].close;
+      index = account_detail.stonks.tickers.indexOf(ticker);
+      account_detail.stonks.stakes[index] -= amountSold
+      account_detail.stonks.shares[index] -= amountSold / price;
+      calculateNetWorth();
+      profit = account_detail.net_worth - copy;
+      account_detail.trades += profit;
+      storeLocal();
+    })
+}
+
 
 /*if(shareObject.length > 0){
   document.getElementById('noPortfolioMessage').innerHTML = "You dipshit, your portfolio is fucking empty you god damn loser."
