@@ -14,7 +14,7 @@ while(index < shares.length){
 console.log(shareObject)
 
 if(shareObject.length > 0){
-  document.getElementById('no-portfolio-message').innerHTML = "You dipshit, your portfolio is fucking empty you god damn loser."
+  document.getElementById('noPortfolioMessage').innerHTML = "You dipshit, your portfolio is fucking empty you god damn loser."
 } else {
-  document.getElementById('no-portfolio-message').innerHTML = "Bloody fucker."
+  document.getElementById('noPortfolioMessage').innerHTML = "Bloody fucker."
 }
