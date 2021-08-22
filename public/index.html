@@ -25,9 +25,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       createCandlestickGraph('AAPL', 'chart', '2y', 'stocksContainerOne');
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      createCandlestickGraph('AAPL', 'chart', '2y', 'stocksContainerTwo');
+      setTimeout(function () { createCandlestickGraph('AMZN', 'chart', '2y', 'stocksContainerTwo')}, 300);
+      setTimeout(function () {createCandlestickGraph('FB', 'chart', '2y', 'stocksContainerThree')}, 600);
+      setTimeout(function () {createCandlestickGraph('GOOGL', 'chart', '2y', 'stocksContainerFour')},900);
     });
   </script>
 
@@ -92,7 +92,10 @@
       <div id="stock-charts-container" class="w" style="width: 97%; margin: 1em auto 0  auto">
         <div id="stocksContainerOne" class="chart my-1"></div>
         <div id="stocksContainerTwo" class="chart my-1"></div>
+        <div id="stocksContainerThree" class="chart my-1"></div>
+        <div id="stocksContainerFour" class="chart my-1"></div>
       </div>
+      <a href="https://iexcloud.io/%22%3EData" style="position:relative; text-align: center"> Data provided by IEX Cloud</a>
     </div>
   </div>
 
@@ -104,20 +107,6 @@
 
     </div>
   </div>
-
 </div>
-
-
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-
 </body>
 </html>
