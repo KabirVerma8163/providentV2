@@ -73,31 +73,31 @@
 
 <div id="body-div" class="flex flex-col relative" style="top: 100px">
 
-  <div id="explanation" class="flex flex-col bg-red-500 my-3">
+  <div id="explanation" class="flex flex-col bg-blue-light my-3 text-red-500">
     <div id="heading-about-us-body" class="mx-auto">
-      <p class="text-6xl text-gray-300 font-Montserrat font-medium">How Does the Stock Market Work?</p>
+      <p class="text-6xl text-bluee-900 font-Montserrat font-medium">How Does the Stock Market Work?</p>
     </div>
     <div id="text-about-us-body">
-      <p class="text-2xl text-justify text-gray-200 mx-3 my-1 font-Montserrat">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est eveniet excepturi possimus soluta! Alias aperiam distinctio, doloremque est facere in ipsam iste itaque molestiae mollitia odio odit perspiciatis provident saepe soluta sunt temporibus! Ab adipisci alias, amet blanditiis consequuntur corporis dolore dolores dolorum ducimus ea earum eius enim eum excepturi facilis ipsa iste laudantium molestias nihil non nostrum obcaecati pariatur quae quas, qui quia rem repellat saepe totam ullam ut veritatis vitae voluptatum. Architecto, blanditiis cumque deleniti ea facere facilis fugit ipsa ipsam ipsum obcaecati quam quod repudiandae suscipit. Accusamus esse excepturi expedita id, qui sit suscipit ut. Necessitatibus?
+      <p class="text-2xl text-justify text-blue-default mx-3 my-1 font-Montserrat">
+        A stock market, equity market, or share market is the aggregation of buyers and sellers of stocks (also called shares), which represent ownership claims on businesses; these may include securities listed on a public stock exchange, as well as stock that is only traded privately, such as shares of private companies which are sold to investors through equity crowdfunding platforms. Investment in the stock market is most often done via stockbrokerages and electronic trading platforms. Investment is usually made with an investment strategy in mind.
       </p>
     </div>
   </div>
 
-  <div id="actualStonks" class="flex flex-col bg-blue-light w-full">
-    <div id="stocks-search-bar-simulator">
-      <div style="margin: 5px; font-size: 24pt">
-        <input class = "text-center font-Dosis" style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput-simulator" placeholder="Ticker Symbol">
-        <button style="alignment: left; color: #ffffff" onclick="searchSymbolSimulator()" class="font-Dosis">Search</button>
+  <div id="actualStonks" class="flex flex-col bg-blue-100 w-full">
+    <div id="stocks-search-bar-simulator" class="flex flex-row w-4/5 h-12 mx-auto my-2 bg-green-300">
+        <input class="text-center font-Dosis w-3/5 mx-auto text-3xl border-4 border-yellow-200" style="color: #0f2634"
+               type="text" id="stockInput-simulator" placeholder="Ticker Symbol">
+        <button class="text-center font-Montserrat w-2/5 mx-auto text-3xl text-blue-default font-semibold" onclick="searchSymbolSimulator()" class="font-Dosis">Search</button>
       </div>
     </div>
 
     <div id="sample-buy" class="flex flex-col bg-blue-darkest mx-auto" style="width: 95%">
       <div id="graph-sample-stock" class="chart w-full"></div>
 
-      <div id="buttons-sample-stock" class="flex flex-row bg-red-50 h-6">
-        <input type="number" id="moneySpentInput">
-        <div id="button-buy" onclick="stockBuy(this.id)" class="mx-auto h-4">Buy Stock</div>
+      <div id="buttons-sample-stock" class="flex flex-row w-3/5 h-16 mx-auto bg-red-300 border-4 border-red-700">
+        <input type="number" id="moneySpentInput" class="w-3/5 font-Montserrat text-4xl text-center">
+        <div id="button-buy" onclick="stockBuy(this.id)" class="font-Lato mx-auto h-4 w-2/5 text-center text-5xl text-yellow-100">Buy Stock</div>
       </div>
     </div>
 
