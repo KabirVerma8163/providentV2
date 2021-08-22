@@ -30,6 +30,7 @@ module.exports = {
       pink: colors.pink,
       violet: colors.violet,
       bluee: colors.blue,
+      cyan: colors.cyan,
       blue: {
         light: "#5eabdb",
         default: "#175e87",

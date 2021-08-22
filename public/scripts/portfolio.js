@@ -23,7 +23,7 @@ function generateRow(table, rowData)
   input.style = "color: black";
   input.type = 'number';
   let btn = row.insertCell();
-  btn.innerHTML = 'Sell';
+  btn.innerHTML = '<p class="bg-cyan-300">Sell</p>';
   btn.onclick = (function () {
     onClickFunction(rowData[0], input.id);
   });
