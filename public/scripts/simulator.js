@@ -1,25 +1,5 @@
-// const fetch = require("node-fetch");
-// const fetch = import('node-fetch')
-const token222 = "Tsk_7124566e8c6147939d1708c99bd3b78a";
-const base_url = `https://sandbox.iexapis.com/stable/stock/`
-const base_url2 = `/chart/today?token222=${token222}&includeToday=true`
-
 let symbolPlaceholder = "Your mom"
 let moneySpentPlaceholder = 0
-
-let account_detail = {
-  email: '123@example.com',
-  username: 'name',
-  stonks: {
-    tickers: [],
-    stakes: [],
-    shares: []
-  },
-  money: 10000,
-  net_worth: 0,
-  trades: [],
-  net_growth: []
-}
 
 function shit(){
   alert("SHIRT")

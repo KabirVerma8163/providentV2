@@ -1,9 +1,8 @@
-/*const fetch = require("node-fetch");*/
-
 const dtoken = "Tsk_7124566e8c6147939d1708c99bd3b78a";
 const base_url = `https://sandbox.iexapis.com/stable/stock/`
 const base_url2 = `/chart/today?token=${dtoken}&includeToday=true`
 let account_detail;
+
 (function () {
     let accString = localStorage.getItem('account');
     if (accString != null)
