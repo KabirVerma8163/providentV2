@@ -66,8 +66,7 @@ function buyStonk(ticker, cost)
 {
   let price;
   account_detail.money -= cost;
-  //${base_url}${ticker}${base_url2}
-  fetch(`https://sandbox.iexapis.com/stable/stock/aapl/chart/2018?token=Tsk_7124566e8c6147939d1708c99bd3b78a&includeToday=false`)
+  fetch(`${base_url}${ticker}${base_url2}`)
     .then((response) => {
       return response.json();
     })
