@@ -18,16 +18,22 @@ function generateRow(table, rowData)
     let text = document.createTextNode(rowData[i]);
     cell.appendChild(text);
   }
+  let cell = row.insertCell();
+  cell.style.display = 'flex'
+  cell.style.flexDirection = "column"
+  let btn = document.createElement("button");
   let input = document.createElement("input");
   input.id = `sellAmountRow${row.rowIndex}`;
-  input.style = "color: black";
+  input.style = "color: black;";
+  input.style.textAlign = "center"
   input.type = 'number';
-  let btn = row.insertCell();
-  btn.innerHTML = '<p class="bg-cyan-300">Sell</p>';
+  input.value = '000';
+  btn.innerHTML = '<p class="bg-cyan-300 text-bluee-800">Sell</p>';
   btn.onclick = (function () {
     onClickFunction(rowData[0], input.id);
   });
-  btn.appendChild(input);
+  cell.appendChild(btn);
+  cell.appendChild(input);
 }
 
 function onClickFunction(ticker, inputBoxId){
@@ -49,19 +55,19 @@ if (account_detail.stonks.tickers.length > 0) {
   document.getElementById('no-portfolio').style.display = 'block';
   let shares = account_detail.stonks.shares;
   let stakes = account_detail.stonks.stakes;
-    let promises = [];
-    for (let i = 0; i < shares.length; i++)
+  let promises = [];
+  for (let i = 0; i < shares.length; i++)
+  {
+    promises.push(fetch(`${base_url}${account_detail.stonks.tickers[i]}${base_url2}`)
+        .then(response => response.json()));
+  }
+  Promise.all(promises).then(data => {
+    for (let i = 0; i < data.length; i++)
     {
-      promises.push(fetch(`${base_url}${account_detail.stonks.tickers[i]}${base_url2}`)
-          .then(response => response.json()));
+      generateRow(document.querySelector("table"), [account_detail.stonks.tickers[i],
+        account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close,  data[i][data[i].length - 1].close * account_detail.stonks.shares[i]]);
     }
-    Promise.all(promises).then(data => {
-      for (let i = 0; i < data.length; i++)
-      {
-        generateRow(document.querySelector("table"), [account_detail.stonks.tickers[i],
-          account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close,  data[i][data[i].length - 1].close * account_detail.stonks.shares[i]]);
-      }
-      });
+  });
 } else {
   document.getElementById('noPortfolioMessage').style.display = 'block';
   document.getElementById('noPortfolioMessage').innerHTML = `Your portfolio is empty, start investing: <a href='simulator.html' class='underline'>Simulator</a>`
