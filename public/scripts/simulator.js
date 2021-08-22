@@ -8,7 +8,7 @@ function shit(){
 function searchSymbolSimulator(){
   let symbol = document.getElementById("stockInput-simulator").value.toUpperCase();
   createCandlestickGraph(symbol, 'chart', '1y', 'graph-sample-stock');
-  symbolPlaceholder = symbol
+  symbolPlaceholder = symbol;
 }
 
 function stockBuy(elementId){
@@ -16,12 +16,12 @@ function stockBuy(elementId){
   let moneySpentId = document.getElementById(elementId).previousElementSibling.id
   let moneySpent = document.getElementById(moneySpentId).value
   let parentId = document.getElementById(elementId).parentNode.id
-  console.log(parentId)
   let siblingId = document.getElementById(parentId).parentNode.firstElementChild.id
-  alert(`symbol ${symbolPlaceholder} money ${moneySpent}`)
-  moneySpentPlaceholder = moneySpent
-
-  buyStonk(symbolPlaceholder, moneySpentPlaceholder)
+  alert(`symbol ${symbolPlaceholder} money ${moneySpent}`);
+  moneySpentPlaceholder = moneySpent;
+  console.log('bought stonk');
+  buyStonk(symbolPlaceholder, moneySpentPlaceholder);
+  console.log('bought stonk');
   account_detail.username = 'asdf';
   storeLocal();
 }
@@ -53,6 +53,7 @@ function calculateNetWorth()
 
 function buyStonk(ticker, cost)
 {
+  console.log('testing');
   let price;
   account_detail.money -= cost;
   fetch(`${base_url}${ticker}${base_url2}`)
