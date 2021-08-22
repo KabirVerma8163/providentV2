@@ -86,6 +86,7 @@ function sellStonk(ticker, amountSold)
       calculateNetWorth();
       profit = account_detail.net_worth - copy;
       account_detail.trades += profit;
+      storeLocal();
     })
 }
 
