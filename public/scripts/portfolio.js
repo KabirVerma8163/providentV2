@@ -20,23 +20,25 @@ function generateRow(table, rowData)
   }
 }
 
-let shares = account_detail.stonks.shares
-let stakes = account_detail.stonks.stakes
+if (account_detail.stonks.tickers.length > 0) {
+  document.getElementById('no-portfolio').style.display = 'block'
 
-/*generateTableHead(document.querySelector("table"));*/
-for (let i = 0; i < shares.length; i++)
-{
-  fetch(`${base_url}${account_detail.stonks.tickers[i]}${base_url2}`)
+  let shares = account_detail.stonks.shares
+  let stakes = account_detail.stonks.stakes
+
+  /*generateTableHead(document.querySelector("table"));*/
+  for (let i = 0; i < shares.length; i++) {
+    fetch(`${base_url}${account_detail.stonks.tickers[i]}${base_url2}`)
       .then(response => response.json())
       .then(data => {
         console.log(i);
         generateRow(document.querySelector("table"), [account_detail.stonks.tickers[i],
-            account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close,  data[data.length - 1].close * account_detail.stonks.shares[i]]);
+          account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close, data[data.length - 1].close * account_detail.stonks.shares[i]]);
       });
-}
-
-(ticker) => {
-
+  }
+} else {
+  document.getElementById('noPortfolioMessage').style.display = 'block';
+  document.getElementById('noPortfolioMessage').innerHTML = `Your portfolio is empty, start investing: <a href='simulator.html' class='underline'>Simulator</a>`
 }
 
 function sellStonk(ticker, amountSold){
