@@ -1,24 +1,23 @@
+let symbolPlaceholder = "Your mom"
+
 function searchSymbolSimulator()
 {
-  let symbol = document.getElementById("stockInput").value;
-  createCandlestickGraph(symbol, 'chart', '1y', 'graph1');
-  // var othergraphs = [document.getElementById("graph2"),document.getElementById("graph3"),document.getElementById("graph4"),document.getElementById("graph5")];
-  // for (let i = 0; i < othergraphs.length; i++)
-  // {
-  //   othergraphs[i].style.display = 'none';
-  // }
+  let symbol = document.getElementById("stockInput-simulator").value.toUpperCase();
+  createCandlestickGraph(symbol, 'chart', '1y', 'graph-sample-stock');
+  symbolPlaceholder = symbol
 }
 
 
 
 function stockBuy(elementId){
   // alert(elementId)
+  let moneySpentId = document.getElementById(elementId).previousElementSibling.id
+  let moneySpent = document.getElementById(moneySpentId).value
   let parentId = document.getElementById(elementId).parentNode.id
   console.log(parentId)
   let siblingId = document.getElementById(parentId).parentNode.firstElementChild.id
-  alert(siblingId)
-  console.log(siblingId)
-  createCandlestickGraph('AAPL', 'chart', '2y', siblingId);
+  alert(`symbol ${symbolPlaceholder} money ${moneySpent}`)
+
 }
 
 
