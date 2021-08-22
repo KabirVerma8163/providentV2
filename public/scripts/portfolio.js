@@ -18,6 +18,9 @@ function generateRow(table, rowData)
     let text = document.createTextNode(rowData[i]);
     cell.appendChild(text);
   }
+  let btn = row.insertCell();
+  btn.innerHTML = 'Sell';
+  btn.onclick = sellStonk(rowData[0], rowData[4]);
 }
 
 let shares = account_detail.stonks.shares
@@ -55,6 +58,7 @@ function sellStonk(ticker, amountSold){
       profit = account_detail.net_worth - copy;
       account_detail.trades += profit;
       storeLocal();
+      console.log(account_detail);
     })
 }
 
