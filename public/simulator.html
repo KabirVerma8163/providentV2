@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Provident</title>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  </style>
+
+  <script type="text/javascript" src = "scripts/navbar.js"></script>
+
+  <!--Stock Chart's CSS  -->
+  <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+  <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
+  <!--Stock Chart's JS imports  -->
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+  <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+  <script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+  <script src="https://code.highcharts.com/modules/full-screen.js"></script>
+  <!--Stock Chart's JS file.  -->
+  <script type="text/javascript" src = "scripts/chart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      createCandlestickGraph('AAPL', 'chart', '2y', 'stocksContainerOne');
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      createCandlestickGraph('AAPL', 'chart', '2y', 'stocksContainerTwo');
+    });
+  </script>
+
+  <!-- Simulator JS files -->
+  <script src="scripts/simulator.js"></script>
+
+</head>
+<body class="bg-blue-darkest flex flex-col">
+
+<!-- tailwind CSS format
+ display type and flex properties. Animations and transitions. Width/height. Margins and padding, border.
+ background Colours.  fonts. font weight. font colours.
+-->
+
+<div id="navbar" class="flex fixed transition-all duration-300 w-full bg-blue-light
+                        font-Dosis text-blue-default text-4xl font-medium z-50"> <!-- navbar -->
+
+  <div id="left-half-navbar" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
+    <div id="logo" class=""> <!-- logo -->
+      <img src="img/provident_logo.png" alt="LOGO" class="h-16">
+    </div>
+
+    <div id="links" class="flex items-center m-1"> <!-- links -->
+      <a href="index.html" class="mx-3">Home</a>
+      <a href="news.html" class="mx-3">News</a>
+      <a href="stocks.html" class="mx-3">Stocks</a>
+      <a href="simulator.html" class="mx-3">Simulator</a>
+    </div>
+  </div>
+
+  <div id="right-half-navbar" class="flex flex-row-reverse w-2/5 items-center m-1"> <!--right half -->
+    <div> <!-- login/signup buttons -->
+      <a href="#" class="mx-">Log In</a>
+      <a href="#" class="mx-3">Sign Up</a>
+    </div>
+
+    <div class="order-first"> <!-- help -->
+      <a href="help.html"><img src="img/question_mark.png" alt="logo" class="h-16"></a>
+    </div>
+  </div>
+
+</div>
+
+<div id="body-div" class="flex flex-col relative" style="top: 100px">
+
+  <div id="explanation" class="flex flex-col bg-red-500 my-3">
+    <div id="heading-about-us-body" class="mx-auto">
+      <p class="text-6xl text-gray-300 font-Montserrat font-medium">How Does the Stock Market Work?</p>
+    </div>
+    <div id="text-about-us-body">
+      <p class="text-2xl text-justify text-gray-200 mx-3 my-1 font-Montserrat">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est eveniet excepturi possimus soluta! Alias aperiam distinctio, doloremque est facere in ipsam iste itaque molestiae mollitia odio odit perspiciatis provident saepe soluta sunt temporibus! Ab adipisci alias, amet blanditiis consequuntur corporis dolore dolores dolorum ducimus ea earum eius enim eum excepturi facilis ipsa iste laudantium molestias nihil non nostrum obcaecati pariatur quae quas, qui quia rem repellat saepe totam ullam ut veritatis vitae voluptatum. Architecto, blanditiis cumque deleniti ea facere facilis fugit ipsa ipsam ipsum obcaecati quam quod repudiandae suscipit. Accusamus esse excepturi expedita id, qui sit suscipit ut. Necessitatibus?
+      </p>
+    </div>
+  </div>
+
+  <div id="actualStonks" class="flex flex-col bg-blue-light w-full">
+    <div id="stocks-search-bar-simulator">
+      <div style="margin: 5px; font-size: 24pt">
+        <input class = "text-center font-Dosis" style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput-simulator" placeholder="Ticker Symbol">
+        <button style="alignment: left; color: #ffffff" onclick="searchSymbolSimulator()" class="font-Dosis">Search</button>
+      </div>
+    </div>
+
+    <div id="sample-buy" class="flex flex-col bg-blue-darkest mx-auto" style="width: 95%">
+      <div id="graph-sample-stock" class="chart w-full"></div>
+
+      <div id="buttons-sample-stock" class="flex flex-row bg-red-50 h-6">
+        <div id="button-buy" onclick="stockBuy(this.id)" class="mx-auto h-4">Buy Stock</div>
+      </div>
+    </div>
+
+  </div>
+
+  <br><br><br><br><br>
+
+<!--  <div id="left-half-body" class="flex flex-col-reverse w-8/12 h-4/5 ml-1 border-4">-->
+<!--    <div id="about-Us" class="flex flex-col w-full">-->
+<!--      <div id="heading-about-us-body" class="mx-auto">-->
+<!--        <p class="text-6xl text-gray-300 font-Montserrat font-medium">What is Provident?</p>-->
+<!--      </div>-->
+<!--      <div id="text-about-us-body">-->
+<!--        <p class="text-2xl text-justify text-gray-200 mx-3 my-1 font-Montserrat">-->
+<!--          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est eveniet excepturi possimus soluta! Alias aperiam distinctio, doloremque est facere in ipsam iste itaque molestiae mollitia odio odit perspiciatis provident saepe soluta sunt temporibus! Ab adipisci alias, amet blanditiis consequuntur corporis dolore dolores dolorum ducimus ea earum eius enim eum excepturi facilis ipsa iste laudantium molestias nihil non nostrum obcaecati pariatur quae quas, qui quia rem repellat saepe totam ullam ut veritatis vitae voluptatum. Architecto, blanditiis cumque deleniti ea facere facilis fugit ipsa ipsam ipsum obcaecati quam quod repudiandae suscipit. Accusamus esse excepturi expedita id, qui sit suscipit ut. Necessitatibus?-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div id="stocks-on-home" class="flex flex-col">-->
+<!--      <div id="heading-stocks-body" class="mx-auto">-->
+<!--        <p class="text-6xl text-gray-300 py-1 font-Montserrat font-medium">Top 5 of the Day</p>-->
+<!--      </div>-->
+<!--      <div id="stock-charts-container" class="w" style="width: 97%; margin: 1em auto 0  auto">-->
+<!--        <div id="stocksContainerOne" class="chart my-1"></div>-->
+<!--        <div id="stocksContainerTwo" class="chart my-1"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div id="right-half-body" class="flex flex-col w-4/12 h-4/5 ml-1 border-4">-->
+<!--    <div id="news-on-home" class="flex flex-col w-full">-->
+<!--      <div id="heading-news-body" class="mx-auto">-->
+<!--        <p class="text-6xl text-gray-300 font-Montserrat font-medium">News Update</p>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+</div>
+
+
+</body>
+</html>

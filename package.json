@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss build -i src/styles.css -o public/stylesheets/styles.css",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "start": "node app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
     "tailwindcss": "^2.2.7"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-const fetch = require("node-fetch")
+const fetch = require("node-fetch");
 
 const token = "Tsk_7124566e8c6147939d1708c99bd3b78a";
 const base_url = `https://sandbox.iexapis.com/stable/stock/`
@@ -14,7 +14,8 @@ account_detail = {
     },
     money: 10000,
     net_worth: 0,
-    net_growth: [],
+    trades: [],
+    net_growth: []
 }
 
 function calculateNetWorth()
@@ -31,8 +32,8 @@ function buyStonk(ticker, cost)
 {
     let price;
     account_detail.money -= cost;
-    //fetch(`${base_url}${ticker}${base_url2}`)
-    fetch(`https://sandbox.iexapis.com/stable/stock/aapl/chart/today?token=${token}&includeToday=true`)
+    //${base_url}${ticker}${base_url2}
+    fetch(`https://sandbox.iexapis.com/stable/stock/aapl/chart/2018?token=Tsk_7124566e8c6147939d1708c99bd3b78a&includeToday=false`)
         .then((response) => {
             return response.json();
         })
@@ -44,6 +45,26 @@ function buyStonk(ticker, cost)
             calculateNetWorth();
         });
 }
+
+function sellStonk(ticker, amountSold)
+{
+    copy = account_detail.net_worth;
+    account_detail.money += amountSold;
+    fetch(`${base_url}${ticker}${base_url2}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((stonks) => {
+            price = stonks[stonks.length-1].close;
+            index = account_detail.stonks.tickers.indexOf(ticker);
+            account_detail.stonks.stakes[index] -= amountSold
+            account_detail.stonks.shares[index] -= amountSold / price;
+            calculateNetWorth();
+            profit = account_detail.net_worth - copy;
+            account_detail.trades += profit;
+        })
+}
+
 
 function refresh()
 {
@@ -62,5 +83,3 @@ function refresh()
             })
     }
 }
-
-buyStonk('aapl', 200);
