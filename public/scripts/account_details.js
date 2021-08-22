@@ -8,7 +8,6 @@ let account_detail;
     if (accString != null)
     {
         account_detail = JSON.parse(accString);
-        console.log('tst');
     }
     else
     {
@@ -26,7 +25,7 @@ let account_detail;
             net_growth: []
         }
     }
-    console.log(account_detail.name);
+    console.log(account_detail.username);
 })();
 
 function calculateNetWorth()
