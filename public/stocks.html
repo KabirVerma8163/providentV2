@@ -39,9 +39,9 @@
 <div id="navbar" class="flex fixed transition-all duration-300 w-full bg-blue-light
                         font-Dosis text-blue-default text-4xl font-medium z-50"> <!-- navbar -->
 
-  <div id="left-half-navbar" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
+  <div id="left-half-navbar" style="padding-left: 8px" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
     <div id="logo" class=""> <!-- logo -->
-      <img src="img/provident_logo.png" alt="LOGO" class="h-16">
+      <img src="img/Logo.png" alt="LOGO" class="h-16">
     </div>
 
     <div id="links" class="flex items-center m-1"> <!-- links -->
@@ -75,13 +75,13 @@
   <div style="width: 25%; padding: 20px; float: left">
     <div style="float: none; text-align: center;">
       <div style="margin: 5px; font-size: 24pt">
-        <input class = "text-center" style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput" placeholder="Ticker Symbol">
+        <input class = "text-center font-Dosis" style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput" placeholder="Ticker Symbol">
         <button style="alignment: left; color: #ffffff" onclick="searchSymbol()" class="font-Dosis">Search</button>
       </div>
       <div style = "color: #ffffff; font-size: 30pt">
-        <button style="clear: left; margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('gainers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Gainers</button>
-        <button style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('losers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Losers</button>
-        <button style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('mostactive', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Most Active</button>
+        <button class="font-Dosis" style="clear: left; margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('gainers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Gainers</button>
+        <button class="font-Dosis" style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('losers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Losers</button>
+        <button class="font-Dosis" style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('mostactive', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Most Active</button>
       </div>
     </div>
   </div>
