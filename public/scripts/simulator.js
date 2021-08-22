@@ -23,7 +23,7 @@ function stockBuy(elementId){
   buyStonk(symbolPlaceholder, moneySpentPlaceholder);
   console.log('bought stonk');
   account_detail.username = 'asdf';
-  storeLocal();
+  console.log(localStorage.getItem('account'));
 }
 
 
@@ -53,7 +53,6 @@ function calculateNetWorth()
 
 function buyStonk(ticker, cost)
 {
-  console.log('testing');
   let price;
   account_detail.money -= cost;
   fetch(`${base_url}${ticker}${base_url2}`)
@@ -66,6 +65,7 @@ function buyStonk(ticker, cost)
       account_detail.stonks.stakes.push(cost);
       account_detail.stonks.shares.push(cost/price);
       calculateNetWorth();
+      storeLocal();
       console.log(account_detail)
     });
 }

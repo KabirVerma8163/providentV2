@@ -8,6 +8,7 @@ let account_detail;
     if (accString != null)
     {
         account_detail = JSON.parse(accString);
+        console.log('loading account from local storage');
     }
     else
     {
@@ -25,7 +26,8 @@ let account_detail;
             net_growth: []
         }
     }
-    console.log(account_detail.username);
+    document.getElementById("balance-text-simulator").innerText = `$${account_detail.money}`;
+    console.log(account_detail.money);
 })();
 
 function calculateNetWorth()

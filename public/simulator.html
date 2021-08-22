@@ -23,9 +23,6 @@
   <!--Stock Chart's JS file.  -->
   <script type="text/javascript" src = "scripts/chart.js"></script>
 
-  <!-- Simulator JS files -->
-  <script src="scripts/simulator.js"></script>
-  <script type="text/javascript" src = "scripts/account_details.js"></script>
 
 </head>
 <body class="bg-blue-darkest flex flex-col">
@@ -68,7 +65,7 @@
 <div id="body-div" class="flex flex-col relative" style="top: 100px">
 
   <div id="balance-simulator" style="font-size:72pt" class="flex mx-auto my-2">
-    <p class="text-blue-light font-Montserrat font-medium">Balance Placeholder</p>
+    <p id="balance-text-simulator" class="text-blue-light font-Montserrat font-medium">Balance Placeholder</p>
   </div>
 
   <div id="actualStonks" style="margin-top: 50px" class="flex flex-col bg-blue-100 w-full">
@@ -139,6 +136,9 @@
 
 </div>
 
+<!-- Simulator JS files -->
+<script src="scripts/simulator.js"></script>
+<script type="text/javascript" src = "scripts/account_details.js"></script>
 
 </body>
 </html>
