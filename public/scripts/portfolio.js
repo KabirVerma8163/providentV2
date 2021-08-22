@@ -1,4 +1,4 @@
-function generateTableHead(table)
+/*function generateTableHead(table)
 {
   let thead = table.createTHead();
   let row = thead.insertRow();
@@ -9,33 +9,36 @@ function generateTableHead(table)
     th.appendChild(document.createTextNode(headers[i]));
     row.appendChild(th);
   }
-}
-function generateTable(table, data)
+}*/
+function generateRow(table, rowData)
 {
-
+  let row = table.insertRow();
+  for (let i = 0; i < rowData.length; i++) {
+    let cell = row.insertCell();
+    let text = document.createTextNode(rowData[i]);
+    cell.appendChild(text);
+  }
 }
-
-let account_detail = JSON.parse(localStorage.getItem('account'));
-console.log(account_detail)
 
 let shares = account_detail.stonks.shares
 let stakes = account_detail.stonks.stakes
 
-
-let index = 0;
-let shareObject = {}
-console.log('bloody bitch')
-generateTableHead(document.querySelector("table"));
-while(index < shares.length){
-  shareObject[shares[index]] = stakes
-  index += 1;
+/*generateTableHead(document.querySelector("table"));*/
+for (let i = 0; i < shares.length; i++)
+{
+  fetch(`${base_url}${account_detail.stonks.tickers[i]}${base_url2}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(i);
+        generateRow(document.querySelector("table"), [account_detail.stonks.tickers[i],
+            account_detail.stonks.stakes[i], account_detail.stonks.shares[i], data[data.length - 1].close,  data[data.length - 1].close * account_detail.stonks.shares[i]]);
+      });
 }
-console.log(shareObject)
 
 
-if(shareObject.length > 0){
+/*if(shareObject.length > 0){
   document.getElementById('noPortfolioMessage').innerHTML = "You dipshit, your portfolio is fucking empty you god damn loser."
 } else {
   document.getElementById('noPortfolioMessage').innerHTML = "Bloody fucker."
-}
+}*/
 

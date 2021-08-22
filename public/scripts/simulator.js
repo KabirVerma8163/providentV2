@@ -1,9 +1,7 @@
 let symbolPlaceholder = "Your mom"
 let moneySpentPlaceholder = 0
 
-function shit(){
-  alert("SHIRT")
-}
+document.getElementById("balance-text-simulator").innerText = `Balance: $${account_detail.money}`;
 
 function searchSymbolSimulator(){
   let symbol = document.getElementById("stockInput-simulator").value.toUpperCase();
@@ -58,6 +56,7 @@ function buyStonk(ticker, cost)
       account_detail.stonks.shares.push(cost/price);
       calculateNetWorth();
       storeLocal();
+      document.getElementById("balance-text-simulator").innerText = `Balance: $${account_detail.money}`;
       console.log(account_detail)
     });
 }

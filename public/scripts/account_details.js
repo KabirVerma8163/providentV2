@@ -26,7 +26,6 @@ let account_detail;
             net_growth: []
         }
     }
-    document.getElementById("balance-text-simulator").innerText = `Balance: $${account_detail.money}`;
     console.log(account_detail.money);
 })();
 
@@ -44,7 +43,6 @@ function calculateNetWorth()
 function storeLocal()
 {
     localStorage.setItem('account', JSON.stringify(account_detail));
-    document.getElementById("balance-text-simulator").innerText = `Balance: $${account_detail.money}`;
 }
 function getFromLocalStorage()
 {
