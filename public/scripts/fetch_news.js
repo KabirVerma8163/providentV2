@@ -33,33 +33,33 @@ async function fetchDefaultNews()
 
 })();
 
-// function searchTicker()
-// {
-//   ticker = document.getElementById("ticker").value
-//   ticker = ticker.toLowerCase();
-//
-//   fetchStockNews(ticker);
-//   document.getElementById("ticker").value = "";
-//
-// }
+function searchTicker()
+{
+  ticker = document.getElementById("ticker").value
+  ticker = ticker.toLowerCase();
 
-// async function fetchStockNews(ticker)
-// {
-//   // const fetch = require("node-fetch");
-//   const response = await fetch(`https://cloud.iexapis.com/stable/stock/${ticker}/news/last/5?token=${cloud_token}`)
-//   const news = await response.json();
-//
-//   for(let i = 0; i < 5; i++)
-//   {
-//     sources[i] = news[i].source;
-//     urls[i] = news[i].url;
-//     images[i] = news[i].image;
-//     summaries[i] = news[i].summary;
-//     headlines[i] = news[i].headline;
-//   }
-//
-//   await updateStockNews();
-// }
+  fetchStockNews(ticker);
+  document.getElementById("ticker").value = "";
+
+}
+
+async function fetchStockNews(ticker)
+{
+  // const fetch = require("node-fetch");
+  const response = await fetch(`https://cloud.iexapis.com/stable/stock/${ticker}/news/last/5?token=${cloud_token}`)
+  const news = await response.json();
+
+  for(let i = 0; i < 5; i++)
+  {
+    sources[i] = news[i].source;
+    urls[i] = news[i].url;
+    images[i] = news[i].image;
+    summaries[i] = news[i].summary;
+    headlines[i] = news[i].headline;
+  }
+
+  await updateStockNews();
+}
 
 async function updateStockNews()
 {

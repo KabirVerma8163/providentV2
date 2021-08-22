@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Provident Trial</title>
+  <title>News</title>
   <link rel="stylesheet" href="stylesheets/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
@@ -14,19 +14,15 @@
   <script src="scripts/fetch_news.js"></script>
 
 </head>
-<body class="bg-blue-darkest flex flex-col">
+<body class="bg-blue-darkest flex flex-col text-white">
 
-<!-- tailwind CSS format
- display type and flex properties. Animations and transitions. Width/height. Margins and padding, border.
- background Colours.  fonts. font weight. font colours.
--->
 
 <div id="navbar" class="flex fixed transition-all duration-300 w-full bg-blue-light
                         font-Dosis text-blue-default text-4xl font-medium z-50"> <!-- navbar -->
 
   <div id="left-half-navbar" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
-    <div id="logo" class=""> <!-- logo -->
-      <img src="img/provident_logo.png" alt="LOGO" class="h-16">
+    <div id="logo" style="padding-left: 8px" class=""> <!-- logo -->
+      <img src="img/Logo.png" alt="LOGO" class="h-16">
     </div>
 
     <div id="links" class="flex items-center m-1"> <!-- links -->
@@ -50,49 +46,15 @@
 
 </div>
 
-<!--<div id="body-div" class="flex flex-row relative" style="top: 100px">-->
-
-<!--  <div id="left-half-body" class="flex flex-col-reverse w-8/12 h-4/5 ml-1 border-4">-->
-<!--    <div id="about-Us" class="flex flex-col w-full">-->
-<!--      <div id="heading-about-us-body" class="mx-auto">-->
-<!--        <p class="text-6xl text-gray-300 font-Montserrat font-medium">What is Provident?</p>-->
-<!--      </div>-->
-<!--      <div id="text-about-us-body">-->
-<!--        <p class="text-2xl text-justify text-gray-200 mx-3 my-1 font-Montserrat">-->
-<!--          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est eveniet excepturi possimus soluta! Alias aperiam distinctio, doloremque est facere in ipsam iste itaque molestiae mollitia odio odit perspiciatis provident saepe soluta sunt temporibus! Ab adipisci alias, amet blanditiis consequuntur corporis dolore dolores dolorum ducimus ea earum eius enim eum excepturi facilis ipsa iste laudantium molestias nihil non nostrum obcaecati pariatur quae quas, qui quia rem repellat saepe totam ullam ut veritatis vitae voluptatum. Architecto, blanditiis cumque deleniti ea facere facilis fugit ipsa ipsam ipsum obcaecati quam quod repudiandae suscipit. Accusamus esse excepturi expedita id, qui sit suscipit ut. Necessitatibus?-->
-<!--        </p>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div id="stocks-on-home" class="flex flex-col">-->
-<!--      <div id="heading-stocks-body" class="mx-auto">-->
-<!--        <p class="text-6xl text-gray-300 py-1 font-Montserrat font-medium">Top 5 of the Day</p>-->
-<!--      </div>-->
-<!--      <div id="stock-charts-container" class="w" style="width: 97%; margin: 1em auto 0  auto">-->
-<!--        <div id="stocksContainerOne" class="chart my-1"></div>-->
-<!--        <div id="stocksContainerTwo" class="chart my-1"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div id="right-half-body" class="flex flex-col w-4/12 h-4/5 ml-1 border-4">-->
-<!--    <div id="news-on-home" class="flex flex-col w-full">-->
-<!--      <div id="heading-news-body" class="mx-auto">-->
-<!--        <p class="text-6xl text-gray-300 font-Montserrat font-medium">News Update</p>-->
-<!--      </div>-->
-
-<!--    </div>-->
-<!--  </div>-->
-
-<!--</div>-->
+<br><br><br><br>
 
 <h1 class="text-center font-Dosis text-7xl text-white">News</h1>
 
 <br>
 
 <div class="flex flex-row w-2/12" style="margin-left: auto; margin-right: auto">
-  <input class="font-Dosis text-center text-3xl text-black" id="ticker" placeholder="Ticker Symbol">
-  <button onclick="searchTicker()" id="button" class="font-Dosis text-white text-3xl" style="padding-left: 8px">Search</button>
+  <input class="font-Dosis text-center text-4xl text-black" id="ticker" placeholder="Ticker Symbol">
+  <button onclick="searchTicker()" id="button" class="font-Dosis text-white text-3xl" style="padding-left: 12px">Search</button>
 </div>
 
 <br><br><br>
@@ -183,17 +145,10 @@
 
   </div>
 
+</div>
 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+
+<br><br>
 
 </body>
 </html>

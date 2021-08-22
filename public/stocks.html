@@ -39,9 +39,9 @@
 <div id="navbar" class="flex fixed transition-all duration-300 w-full bg-blue-light
                         font-Dosis text-blue-default text-4xl font-medium z-50"> <!-- navbar -->
 
-  <div id="left-half-navbar" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
+  <div id="left-half-navbar" style="padding-left: 8px" class="flex w-3/5 m-2 ml-1"> <!-- left half -->
     <div id="logo" class=""> <!-- logo -->
-      <img src="img/provident_logo.png" alt="LOGO" class="h-16">
+      <img src="img/Logo.png" alt="LOGO" class="h-16">
     </div>
 
     <div id="links" class="flex items-center m-1"> <!-- links -->
@@ -65,53 +65,23 @@
 
 </div>
 
-<!--<div id="body-div" class="flex flex-row relative" style="top: 100px">-->
 
-<!--  <div id="left-half-body" class="flex flex-col-reverse w-3/12 h-4/5 ml-1 border-4">-->
-<!--&lt;!&ndash;    <div id="about-Us" class="flex flex-col w-full">&ndash;&gt;-->
-<!--&lt;!&ndash;      <div id="heading-about-us-body" class="mx-auto">&ndash;&gt;-->
-<!--&lt;!&ndash;        <p class="text-6xl text-gray-300 font-Montserrat font-medium">What is Provident?</p>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--&lt;!&ndash;      <div id="text-about-us-body">&ndash;&gt;-->
-<!--&lt;!&ndash;        <p class="text-2xl text-justify text-gray-200 mx-3 my-1 font-Montserrat">&ndash;&gt;-->
-<!--&lt;!&ndash;          Lorem ipsum dolor sit amet&ndash;&gt;-->
-<!--&lt;!&ndash;        </p>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--    -->
-<!--    -->
-<!--    </div>-->
+<br><br><br><br>
 
-<!--    <div id="buttons-on-stocks" class="flex flex-col">-->
-<!--      <div id="heading-buttons-stocks" class="mx-auto">-->
-<!--        <p class="text-3xl text-gray-300 py-1 font-Montserrat font-medium">Stocks Options</p>-->
-<!--      </div>-->
-<!--      <div id="stock-charts-container" class="w" style="width: 97%; margin: 1em auto 0  auto">-->
-<!--        <div id="stocksContainerOne" class="chart my-1"></div>-->
-<!--        <div id="stocksContainerTwo" class="chart my-1"></div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+<h1 class="text-center font-Dosis text-7xl text-white">Stocks</h1>
 
-<!--  <div id="right-half-body" class="flex flex-col w-9/12 h-4/5 ml-1 border-4">-->
-<!--    <div id="stocks-on-stocks-page" class="flex flex-col w-full">-->
-<!--      <div id="heading-stocks-page" class="mx-auto">-->
-<!--        <p class="text-6xl text-gray-300 font-Montserrat font-medium">Stocks</p>-->
-<!--      </div>-->
 
-<!--    </div>-->
-<!--  </div>-->
-
-<div style="alignment: bottom; padding-top: 100px;"> <!-- body -->
+<div style="alignment: bottom; padding-top: 10px;"> <!-- body -->
   <div style="width: 25%; padding: 20px; float: left">
     <div style="float: none; text-align: center;">
       <div style="margin: 5px; font-size: 24pt">
-        <input style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput" placeholder="Ticker Symbol">
+        <input class = "text-center font-Dosis" style="float: left; width: 70%; color: #0f2634" type="text" id="stockInput" placeholder="Ticker Symbol">
         <button style="alignment: left; color: #ffffff" onclick="searchSymbol()" class="font-Dosis">Search</button>
       </div>
       <div style = "color: #ffffff; font-size: 30pt">
-        <button style="clear: left; margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('gainers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Gainers</button>
-        <button style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('losers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Losers</button>
-        <button style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('mostactive', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Most Active</button>
+        <button class="font-Dosis" style="clear: left; margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('gainers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Gainers</button>
+        <button class="font-Dosis" style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('losers', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Losers</button>
+        <button class="font-Dosis" style="margin: 5px; padding: 20px; width: 100%; background-color: #5eabdb" onclick="getListAndUpdateGraphs('mostactive', 'chart', '1y', ['graph1','graph2','graph3','graph4','graph5']);">Top 5 Most Active</button>
       </div>
     </div>
   </div>
@@ -137,16 +107,7 @@
 
 <a href="https://iexcloud.io/%22%3EData" style="position:relative;"> provided by IEX Cloud</a>
 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+<br><br>
 
 </body>
 </html>
